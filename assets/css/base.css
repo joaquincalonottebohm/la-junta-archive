@@ -1,0 +1,22 @@
+/*
+ * Base
+ */
+*,
+*:hover,
+*:focus {
+  outline: 0;
+}
+
+.transition {
+  transition: var(--theme-transition);
+}
+
+#content {
+  min-height: 100vh;
+}
+/* Global colors */
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+}

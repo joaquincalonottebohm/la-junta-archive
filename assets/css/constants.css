@@ -1,0 +1,19 @@
+:root {
+  /* Background */
+  --color-background: #F6F5F0;
+
+  /* Typography */
+  --color-text-primary: #171717;
+  --color-text-secondary: #777777;
+
+  /* Borders */
+  --color-border: #D9D7D1;
+
+  /* Accent */
+  --color-accent: #2445FF;
+
+  /* Existing theme variables */
+  --theme-color-primary: var(--color-accent);
+  --theme-color-secondary: var(--color-text-primary);
+  --theme-transition: all 0.3s ease-in-out;
+}

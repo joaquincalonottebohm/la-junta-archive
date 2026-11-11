@@ -1,0 +1,188 @@
+/*
+ * Footer
+ */
+footer {
+  background-color: var(--theme-color-secondary);
+  display: flex;
+  color: #ffffff;
+}
+
+footer .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 0 4rem;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 767px) {
+  footer .footer-content{
+    flex-direction: row;
+    padding: 4rem 0 6rem;
+    gap: 0;
+  }
+}
+
+.footer-logo img {
+  filter: brightness(0) invert(1);
+}
+
+/* ======================================
+   LA JUNTA ARCHIVE — CUSTOM FOOTER
+====================================== */
+
+#colophon.la-footer {
+  width: 100%;
+  background-color: #FFFFFF;
+  color: var(--color-text-primary);
+  font-family: "Inter", Arial, sans-serif;
+}
+
+/* Main container */
+
+.la-footer__container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 60px 48px;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  column-gap: 60px;
+  align-items: start;
+  box-sizing: border-box;
+}
+
+/* ======================================
+   BRAND
+====================================== */
+
+.la-footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.la-footer__logo {
+  display: inline-block;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.la-footer__logo img {
+  display: block;
+  width: 185px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ======================================
+   SOCIAL ICONS
+====================================== */
+
+.la-footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.la-footer__socials span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--color-text-primary);
+}
+
+.la-footer__socials svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.la-footer__socials svg[fill="none"] {
+  fill: none;
+}
+
+/* ======================================
+   FOOTER NAVIGATION
+====================================== */
+
+.la-footer__column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.la-footer__column h2 {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-text-primary);
+  margin: 0 0 4px;
+}
+
+.la-footer__column a,
+.la-footer__column span {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.la-footer__column a:hover {
+  color: var(--color-accent);
+}
+
+/* ======================================
+   RESPONSIVE — TABLET
+====================================== */
+
+@media (max-width: 991px) {
+
+  .la-footer__container {
+    padding: 40px 32px;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    column-gap: 32px;
+  }
+
+}
+
+/* ======================================
+   RESPONSIVE — MOBILE
+====================================== */
+
+@media (max-width: 767px) {
+
+  .la-footer__container {
+    padding: 40px 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 24px;
+  }
+
+  .la-footer__brand {
+    grid-column: 1 / -1;
+  }
+
+  .la-footer__logo img {
+    width: 165px;
+  }
+
+  .la-footer__column h2 {
+    font-size: 16px;
+  }
+
+  .la-footer__column a,
+  .la-footer__column span {
+    font-size: 14px;
+  }
+
+}

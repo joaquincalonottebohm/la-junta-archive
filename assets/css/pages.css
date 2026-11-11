@@ -1,0 +1,313 @@
+
+/*
+ * Pages
+ *
+ * LA JUNTA ARCHIVE
+ * Page-specific theme styles
+ */
+
+/* ===================================
+   LA JUNTA ARCHIVE — HOME HERO
+=================================== */
+
+body.home .intro {
+  padding-top: 160px !important;
+  padding-bottom: 160px !important;
+}
+
+/* Center content */
+
+body.home .intro .row {
+  justify-content: center;
+}
+
+body.home .intro .row > .col-12 {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* Hero title */
+
+body.home .intro .intro-title {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hero subtitle */
+
+body.home .intro .intro-text {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: var(--color-text-secondary);
+  max-width: 1200px;
+  margin: 0 auto 24px;
+}
+
+body.home .intro .intro-text p {
+  margin-bottom: 0;
+}
+
+/* Hero button */
+
+body.home .intro .btn-primary {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #FFFFFF;
+  border-radius: 4px;
+  padding: 12px 24px;
+  min-width: 240px;
+}
+
+/* Hero — Mobile */
+
+@media (max-width: 767px) {
+  body.home .intro {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+
+  body.home .intro .intro-title {
+    font-size: 32px;
+  }
+
+  body.home .intro .intro-text {
+    font-size: 20px;
+  }
+
+  body.home .intro .btn-primary {
+    min-width: 0;
+  }
+}
+
+
+/* ======================================
+   LA JUNTA ARCHIVE — SELECTED ARTISTS
+====================================== */
+
+/* Main container */
+
+.selected-artists {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  padding-bottom: 120px;
+}
+
+/* ======================================
+   SECTION HEADER
+====================================== */
+
+.selected-artists__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  width: calc(100vw - 120px);
+  max-width: 1320px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 36px;
+}
+
+/* Left and right groups */
+
+.selected-artists__meta,
+.selected-artists__links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Section information */
+
+.selected-artists__meta p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-text-primary);
+}
+
+/* Navigation links */
+
+.selected-artists__links {
+  align-items: flex-end;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-accent);
+}
+
+.selected-artists__links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.selected-artists__links a:hover {
+  text-decoration: underline;
+}
+
+
+/* ======================================
+   ARTWORK CONTAINERS
+====================================== */
+
+.selected-artist {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 01 — Tanya Aguiñiga */
+
+.selected-artist:nth-of-type(1) {
+  max-width: 600px;
+  margin-left: 15%;
+  margin-right: 0;
+}
+
+/* 02 — Firelei Báez */
+
+.selected-artist:nth-of-type(2) {
+  max-width: 510px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* 03 — Louis Carlos Bernal */
+
+.selected-artist:nth-of-type(3) {
+  max-width: 430px;
+  margin-left: 7%;
+  margin-right: 0;
+}
+
+
+/* ======================================
+   ARTIST TYPOGRAPHY
+====================================== */
+
+/* Artist names */
+
+.selected-artist__name {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+  margin: 0 0 12px;
+}
+
+/* Artwork images */
+
+.selected-artist__image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0;
+  margin-bottom: 8px;
+}
+
+/* Artwork title and caption */
+
+.selected-artist__title,
+.selected-artist__caption {
+  display: inline;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.selected-artist__title::after {
+  content: " ";
+  white-space: pre;
+}
+
+
+/* ======================================
+   RESPONSIVE — TABLET
+====================================== */
+
+@media (max-width: 991px) {
+
+  .selected-artist:nth-of-type(1) {
+    margin-left: 8%;
+  }
+
+  .selected-artist:nth-of-type(2) {
+    margin-left: auto;
+  }
+
+  .selected-artist:nth-of-type(3) {
+    margin-left: 4%;
+  }
+
+}
+
+
+/* ======================================
+   RESPONSIVE — MOBILE
+====================================== */
+
+@media (max-width: 767px) {
+
+  /* Main container */
+
+  .selected-artists {
+    gap: 56px;
+    padding-bottom: 80px;
+  }
+
+  /* Section header */
+
+  .selected-artists__header {
+    width: 100%;
+    max-width: none;
+    left: auto;
+    transform: none;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .selected-artists__links {
+    align-items: flex-start;
+  }
+
+  /* Artwork layout */
+
+  .selected-artist:nth-of-type(1),
+  .selected-artist:nth-of-type(2),
+  .selected-artist:nth-of-type(3) {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Artist typography */
+
+  .selected-artist__name {
+    font-size: 18px;
+  }
+
+}
