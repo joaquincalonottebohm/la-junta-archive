@@ -178,3 +178,48 @@
   }
 
 }
+
+/* ======================================
+   LA JUNTA ARCHIVE — DESKTOP MENU
+====================================== */
+
+@media (min-width: 768px) {
+
+  #site-navigation .main-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Default menu item */
+
+  #site-navigation .main-menu > li > a {
+    display: inline-block;
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    background-color: transparent;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+  }
+
+  /* Hover */
+
+  #site-navigation .main-menu > li > a:hover {
+    color: var(--color-text-primary);
+    background-color: #F2F2F2;
+  }
+
+  /* Current page */
+
+  #site-navigation .main-menu > li.current-menu-item > a,
+  #site-navigation .main-menu > li.current_page_item > a {
+    color: var(--color-text-primary);
+    background-color: #F2F2F2;
+  }
+
+}
