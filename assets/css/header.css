@@ -1,39 +1,346 @@
+
 /*
- * Header
+ * LA JUNTA ARCHIVE — HEADER
  */
-header {
-  background-color: white;
+
+/* HEADER CONTAINER */
+
+.site-header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  gap: 32px;
   width: 100%;
+  min-height: 88px;
+  padding: 16px 48px;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
   z-index: 1000;
-  top: 0;
-  left: 0;
-  padding: 1rem;
 }
 
+/* LOGO */
 
-@media (min-width: 767px) {
-  header {
-    position: relative;
-  padding: 2rem 3rem;
-  }
+.site-header .site-branding {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-.site-title {
+.site-header .site-title {
   margin: 0;
 }
 
-.site-logo {
+.site-header .site-logo {
   display: block;
-  width: min(100%, 140px);
+  width: 180px;
+  max-width: 100%;
   height: auto;
 }
 
-@media (min-width: 767px) {
-  .site-logo {
-    width: min(100%, 180px);
+/* HEADER ACTIONS */
+
+.site-header .header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 28px;
+}
+
+/* NAVIGATION */
+
+.site-header .main-navigation {
+  width: auto;
+  margin: 0;
+}
+
+.site-header .main-navigation .main-menu-container {
+  display: block;
+}
+
+.site-header .main-navigation .main-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.site-header .main-menu > li {
+  display: block;
+  float: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header .main-menu > li > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-text-primary, #171717);
+  padding: 10px 0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-header .main-menu > li > a:hover,
+.site-header .main-menu > li > a:focus-visible {
+  color: var(--color-accent, #2445FF);
+}
+
+/* DISCOVER ARTISTS BUTTON */
+/* First menu item in WordPress */
+
+.site-header .main-menu > li:first-child > a {
+  background-color: #F2F2F2;
+  color: var(--color-text-primary, #171717);
+  padding: 10px 16px;
+  border-radius: 2px;
+}
+
+.site-header .main-menu > li:first-child > a:hover,
+.site-header .main-menu > li:first-child > a:focus-visible {
+  background-color: #E6E6E6;
+  color: var(--color-text-primary, #171717);
+}
+
+/* LANGUAGE DISPLAY */
+
+.site-header .header-language {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.site-header .header-language__active {
+  color: var(--color-text-primary, #171717);
+}
+
+.site-header .header-language__separator,
+.site-header .header-language__inactive {
+  color: var(--color-text-secondary, #777777);
+}
+
+/* HIDE MOBILE TOGGLE ON DESKTOP */
+
+.site-header .main-navigation .menu-toggle {
+  display: none;
+}
+
+/* TABLET */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .site-header {
+    padding: 16px 32px;
+    gap: 20px;
   }
+
+  .site-header .header-actions {
+    gap: 18px;
+  }
+
+  .site-header .main-navigation .main-menu {
+    gap: 16px;
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+
+  .site-header {
+    min-height: 72px;
+    padding: 16px 20px;
+    gap: 12px;
+  }
+
+  .site-header .site-logo {
+    width: 150px;
+  }
+
+  .site-header .header-actions {
+    gap: 16px;
+  }
+
+  /* Language before hamburger */
+
+  .site-header .header-language {
+    order: -1;
+    font-size: 11px;
+  }
+
+  /* Mobile menu button */
+
+  .site-header .main-navigation .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    color: var(--color-text-primary, #171717);
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .site-header .menu-toggle-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .site-header .menu-toggle-icon span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: currentColor;
+  }
+
+  /* Closed mobile menu */
+
+  .site-header .main-navigation .main-menu-container {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 16px 20px 24px;
+    background-color: #FFFFFF;
+    border-top: 1px solid var(--color-border, #D9D7D1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+  }
+
+  /* Open mobile menu */
+
+  .site-header .main-navigation.toggled .main-menu-container,
+  .site-header .main-navigation:has(
+    .menu-toggle[aria-expanded="true"]
+  ) .main-menu-container {
+    display: block;
+  }
+
+  .site-header .main-navigation .main-menu {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .site-header .main-menu > li {
+    width: 100%;
+  }
+
+  .site-header .main-menu > li > a {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 14px 12px;
+    box-sizing: border-box;
+  }
+
+  .site-header .main-menu > li:first-child > a {
+    padding: 14px 12px;
+  }
+
+}
+
+/* VERY SMALL SCREENS */
+
+@media (max-width: 380px) {
+
+  .site-header .site-logo {
+    width: 125px;
+  }
+
+  .site-header .header-actions {
+    gap: 8px;
+  }
+
+  .site-header .menu-toggle-label {
+    display: none;
+  }
+
+}
+
+/* MOBILE HEADER — ALIGNMENT FIX */
+
+@media (max-width: 767px) {
+
+  .site-header {
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+
+  .site-header .site-branding {
+    min-width: 0;
+    margin-right: auto;
+  }
+
+  .site-header .site-logo {
+    width: 140px;
+  }
+
+  .site-header .header-actions {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 12px;
+  }
+
+  /* Language selector */
+
+  .site-header .header-language {
+    position: static !important;
+    order: 0;
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  /* Hamburger menu */
+
+  .site-header .main-navigation {
+    position: static !important;
+    order: 1;
+    width: auto !important;
+    flex: 0 0 auto;
+    margin: 0;
+  }
+
+  .site-header .main-navigation .menu-toggle {
+    position: static !important;
+    transform: none !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    margin: 0 !important;
+  }
+
+  .site-header .menu-toggle-label {
+    display: none;
+  }
+
+  .site-header .menu-toggle-icon {
+    position: static !important;
+    margin: 0 !important;
+  }
+
 }
