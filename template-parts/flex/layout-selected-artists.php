@@ -13,11 +13,11 @@ if (have_rows('artists')) {
         the_row();
 
         $artists[] = [
-            'artist_name'    => get_sub_field('artist_name'),
-            'artwork_title'  => get_sub_field('artwork_title'),
-            'artwork_image'  => get_sub_field('artwork_image'),
-            'artwork_caption'=> get_sub_field('artwork_caption'),
-            'artist_link'    => get_sub_field('artist_link'),
+            'artist_name'     => get_sub_field('artist_name'),
+            'artwork_title'   => get_sub_field('artwork_title'),
+            'artwork_image'   => get_sub_field('artwork_image'),
+            'artwork_caption' => get_sub_field('artwork_caption'),
+            'artist_link'     => get_sub_field('artist_link'),
         ];
     }
 }
@@ -30,7 +30,9 @@ $artist_count = count($artists);
 
 <div class="selected-artists">
 
-    <!-- SECTION HEADER -->
+    <!-- ======================================
+         SECTION HEADER
+    ====================================== -->
 
     <div class="selected-artists__header">
 
@@ -43,52 +45,124 @@ $artist_count = count($artists);
 
             <p>
                 SELECTED ARTISTS / 001—<?php
-                echo esc_html(sprintf('%03d', $artist_count));
+                echo esc_html(
+                    sprintf('%03d', $artist_count)
+                );
                 ?>
             </p>
 
         </div>
 
+        <!-- EDITORIAL LINKS -->
+
         <div class="selected-artists__links">
 
-            <a href="<?php echo esc_url(home_url('/discover-artists/')); ?>">
-                VIEW ALL ARTISTS ↗
+            <!-- VIEW ALL ARTISTS -->
+
+            <a
+                class="selected-artists__link selected-artists__link--view"
+                href="<?php echo esc_url(home_url('/discover-artists/')); ?>"
+            >
+                <span class="selected-artists__link-label">
+                    VIEW ALL ARTISTS
+                </span>
+
+                <span
+                    class="selected-artists__link-arrow"
+                    aria-hidden="true"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        width="20"
+                        height="20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M7 17L17 7M7 7H17V17"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                </span>
             </a>
 
-            <span>SCROLL TO EXPLORE ↓</span>
+            <!-- SCROLL TO EXPLORE -->
 
-        </div>
+            <span
+                class="selected-artists__link selected-artists__link--scroll"
+            >
+                <span class="selected-artists__link-label">
+                    SCROLL TO EXPLORE
+                </span>
 
-    </div>
+                <span
+                    class="selected-artists__link-arrow"
+                    aria-hidden="true"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        width="20"
+                        height="20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M12 5V19M5 12L12 19L19 12"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                </span>
+            </span>
 
-    <!-- ARTISTS -->
+        </div><!-- .selected-artists__links -->
+
+    </div><!-- .selected-artists__header -->
+
+
+    <!-- ======================================
+         SELECTED ARTISTS
+    ====================================== -->
 
     <?php foreach ($artists as $index => $artist) : ?>
 
         <?php
         $number = $index + 1;
 
-        $artist_name = $artist['artist_name'];
+        $artist_name   = $artist['artist_name'];
         $artwork_title = $artist['artwork_title'];
-        $image_id = $artist['artwork_image'];
-        $caption = $artist['artwork_caption'];
-        $link = $artist['artist_link'];
+        $image_id      = $artist['artwork_image'];
+        $caption       = $artist['artwork_caption'];
+        $link          = $artist['artist_link'];
 
-        // Support ACF Link arrays and URL text fields.
+        // Support ACF Link arrays and URL fields.
         $link_url = '';
         $link_target = '_self';
 
         if (is_array($link)) {
             $link_url = $link['url'] ?? '';
-            $link_target = $link['target'] ?: '_self';
+
+            $link_target = !empty($link['target'])
+                ? $link['target']
+                : '_self';
+
         } elseif (is_string($link)) {
             $link_url = $link;
         }
 
-        // Support ACF Image ID and Image Array.
+        // Support ACF Image IDs and arrays.
         if (is_array($image_id)) {
-            $image_id = $image_id['ID'] ?? $image_id['id'] ?? 0;
+            $image_id = $image_id['ID']
+                ?? $image_id['id']
+                ?? 0;
         }
+
+        $image_id = (int) $image_id;
         ?>
 
         <article class="selected-artist">
@@ -97,11 +171,18 @@ $artist_count = count($artists);
 
             <p class="selected-artist__name">
 
-                <?php echo esc_html(sprintf('%02d', $number)); ?>
+                <?php
+                echo esc_html(
+                    sprintf('%02d', $number)
+                );
+                ?>
+
                 —
+
                 <?php echo esc_html($artist_name); ?>
 
             </p>
+
 
             <!-- ARTWORK IMAGE -->
 
@@ -137,6 +218,7 @@ $artist_count = count($artists);
 
             <?php endif; ?>
 
+
             <!-- ARTWORK TITLE -->
 
             <?php if ($artwork_title) : ?>
@@ -146,6 +228,7 @@ $artist_count = count($artists);
                 </p>
 
             <?php endif; ?>
+
 
             <!-- ARTWORK CAPTION -->
 
@@ -161,6 +244,6 @@ $artist_count = count($artists);
 
     <?php endforeach; ?>
 
-</div>
+</div><!-- .selected-artists -->
 
 <?php endif; ?>

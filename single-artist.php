@@ -166,7 +166,7 @@ while (have_posts()) :
                 'Visit the website for ' . get_the_title()
             ); ?>"
           >
-            Contact the artist ↗
+            Contact the artist
           </a>
 
         <?php endif; ?>

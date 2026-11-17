@@ -106,17 +106,42 @@ $suggest_email = 'mailto:jcalonottebohm@gmail.com?subject='
       </p>
 
 
-      <!-- SUGGEST AN ARTIST BUTTON -->
+      <!-- ======================================
+           SUGGEST AN ARTIST BUTTON
+      ====================================== -->
 
       <a
         href="<?php echo esc_url($suggest_email); ?>"
         class="about-archive__button"
         aria-label="Suggest an artist by email"
       >
-        SUGGEST AN ARTIST ↗
+
+        <span>SUGGEST AN ARTIST</span>
+
+        <span
+          class="about-archive__button-arrow"
+          aria-hidden="true"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 17L17 7M7 7H17V17"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+
       </a>
 
-    </section>
+    </section><!-- .about-archive__contribute -->
 
 
   </div><!-- .about-archive__container -->
