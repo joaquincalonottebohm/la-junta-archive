@@ -89,9 +89,12 @@ $artist_count = count($artists);
                 </span>
             </a>
 
-            <!-- SCROLL TO EXPLORE -->
+            <!-- ======================================
+                 SCROLL TO EXPLORE — FUNCTIONAL
+            ====================================== -->
 
-            <span
+            <a
+                href="#selected-artists-works"
                 class="selected-artists__link selected-artists__link--scroll"
             >
                 <span class="selected-artists__link-label">
@@ -118,7 +121,7 @@ $artist_count = count($artists);
                         />
                     </svg>
                 </span>
-            </span>
+            </a>
 
         </div><!-- .selected-artists__links -->
 
@@ -165,7 +168,19 @@ $artist_count = count($artists);
         $image_id = (int) $image_id;
         ?>
 
-        <article class="selected-artist">
+        <!-- ======================================
+             ARTIST CARD
+
+             First artist receives the scroll
+             destination ID.
+        ====================================== -->
+
+        <article
+            class="selected-artist"
+            <?php if ($index === 0) : ?>
+                id="selected-artists-works"
+            <?php endif; ?>
+        >
 
             <!-- ARTIST NAME -->
 
@@ -206,7 +221,7 @@ $artist_count = count($artists);
                     'large',
                     false,
                     [
-                        'class' => 'selected-artist__image',
+                        'class'   => 'selected-artist__image',
                         'loading' => 'lazy',
                     ]
                 );

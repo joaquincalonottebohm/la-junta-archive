@@ -13,16 +13,22 @@
 
 <div id="page" class="site">
 
+  <!-- ======================================
+       LA JUNTA ARCHIVE — HEADER
+  ====================================== -->
+
   <header id="masthead" class="site-header">
 
     <!-- LOGO -->
+
     <div class="site-branding">
       <?php
       get_template_part('template-parts/components/logo');
       ?>
     </div>
 
-    <!-- NAVIGATION + LANGUAGE -->
+    <!-- NAVIGATION -->
+
     <div class="header-actions">
 
       <nav
@@ -31,20 +37,29 @@
         aria-label="Main navigation"
       >
 
+        <!-- MOBILE MENU BUTTON -->
+
         <button
           class="menu-toggle"
           type="button"
           aria-controls="menu-main"
           aria-expanded="false"
+          aria-label="Toggle navigation menu"
         >
-          <span class="menu-toggle-label">Menu</span>
+
+          <span class="menu-toggle-label">
+            Menu
+          </span>
 
           <span class="menu-toggle-icon" aria-hidden="true">
             <span></span>
             <span></span>
             <span></span>
           </span>
+
         </button>
+
+        <!-- WORDPRESS NAVIGATION MENU -->
 
         <?php
         wp_nav_menu(
@@ -59,20 +74,15 @@
         );
         ?>
 
-      </nav>
+      </nav><!-- #site-navigation -->
 
-      <!-- LANGUAGE DISPLAY -->
-      <div
-        class="header-language"
-        aria-label="Language: English. Spanish version coming soon."
-      >
-        <span class="header-language__active">EN</span>
-        <span class="header-language__separator" aria-hidden="true">/</span>
-        <span class="header-language__inactive">ES</span>
-      </div>
+    </div><!-- .header-actions -->
 
-    </div>
+  </header><!-- #masthead -->
 
-  </header>
+
+  <!-- ======================================
+       MAIN SITE CONTENT
+  ====================================== -->
 
   <div id="content" class="site-content">

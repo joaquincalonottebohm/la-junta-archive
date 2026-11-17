@@ -1712,3 +1712,44 @@ body.home .intro-cta::before {
   outline: 2px solid #171717;
   outline-offset: 3px;
 }
+
+/* ======================================
+   HOME — SMOOTH SCROLL TO ARTWORKS
+====================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll destination */
+
+#selected-artists-works {
+  scroll-margin-top: 24px;
+}
+
+/* Account for fixed mobile header */
+
+@media (max-width: 767px) {
+  #selected-artists-works {
+    scroll-margin-top: 90px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ======================================
+   HOME — SPACING BEFORE FIRST ARTIST
+====================================== */
+
+@media (min-width: 768px) {
+  #selected-artists-works {
+    margin-top: 120px;
+    scroll-margin-top: 24px;
+  }
+}
