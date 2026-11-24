@@ -52,11 +52,14 @@ $portrait_id = is_array($portrait)
 
     <!-- ARTIST INFORMATION -->
 
-    <p class="artist-card__caption">
+    <div class="artist-card__caption">
 
-      <span class="artist-card__name">
+      <h2
+        class="artist-card__name"
+        style="display: inline; margin: 0; padding: 0; font: inherit;"
+      >
         <?php echo esc_html($artist_name); ?>
-      </span>
+      </h2>
 
       <?php if ($country) : ?>
 
@@ -70,7 +73,7 @@ $portrait_id = is_array($portrait)
 
       <?php endif; ?>
 
-    </p>
+    </div>
 
   </a>
 

@@ -31,6 +31,12 @@ $artist_count = count($artists);
 <div class="selected-artists">
 
     <!-- ======================================
+         ACCESSIBLE SECTION HEADING
+    ====================================== -->
+
+    <h2 class="visually-hidden">Selected artists</h2>
+
+    <!-- ======================================
          SECTION HEADER
     ====================================== -->
 
@@ -89,9 +95,7 @@ $artist_count = count($artists);
                 </span>
             </a>
 
-            <!-- ======================================
-                 SCROLL TO EXPLORE — FUNCTIONAL
-            ====================================== -->
+            <!-- SCROLL TO EXPLORE -->
 
             <a
                 href="#selected-artists-works"
@@ -126,7 +130,6 @@ $artist_count = count($artists);
         </div><!-- .selected-artists__links -->
 
     </div><!-- .selected-artists__header -->
-
 
     <!-- ======================================
          SELECTED ARTISTS
@@ -184,7 +187,7 @@ $artist_count = count($artists);
 
             <!-- ARTIST NAME -->
 
-            <p class="selected-artist__name">
+            <h2 class="selected-artist__name">
 
                 <?php
                 echo esc_html(
@@ -196,8 +199,7 @@ $artist_count = count($artists);
 
                 <?php echo esc_html($artist_name); ?>
 
-            </p>
-
+            </h2>
 
             <!-- ARTWORK IMAGE -->
 
@@ -233,7 +235,6 @@ $artist_count = count($artists);
 
             <?php endif; ?>
 
-
             <!-- ARTWORK TITLE -->
 
             <?php if ($artwork_title) : ?>
@@ -243,7 +244,6 @@ $artist_count = count($artists);
                 </p>
 
             <?php endif; ?>
-
 
             <!-- ARTWORK CAPTION -->
 

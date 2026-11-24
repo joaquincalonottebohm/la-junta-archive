@@ -1,6 +1,4 @@
-
 <?php
-
 /**
  * Enqueue the theme's directly editable CSS and JavaScript files.
  */

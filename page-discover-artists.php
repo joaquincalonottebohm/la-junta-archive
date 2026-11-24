@@ -1,4 +1,3 @@
-
 <?php
 /**
  * LA Junta Archive — Discover Artists

@@ -13,3 +13,10 @@
 @import url("forms.css");
 @import url("components.css");
 @import url("pages.css");
+
+/* ACCESSIBILITY — VISIBLE KEYBOARD FOCUS */
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 3px solid #191919;
+    outline-offset: 4px;
+}
