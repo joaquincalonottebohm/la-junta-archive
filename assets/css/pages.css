@@ -49,7 +49,7 @@ body.home .intro .intro-text {
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0;
-  color: var(--color-text-secondary);
+  color: #666666;
   max-width: 1200px;
   margin: 0 auto 24px;
 }
@@ -1752,4 +1752,42 @@ html {
     margin-top: 120px;
     scroll-margin-top: 24px;
   }
+}
+
+/* DISCOVER ARTISTS — FILTER HOVER */
+
+.discover-artists-page .artist-filter--country,
+.discover-artists-page .artist-filter--discipline {
+    background-color: transparent;
+    color: #191919;
+    border: 1px solid #D8D8D8;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+/* Hover and focus */
+
+.discover-artists-page .artist-filter--country:hover,
+.discover-artists-page .artist-filter--discipline:hover,
+.discover-artists-page .artist-filter--country:focus,
+.discover-artists-page .artist-filter--discipline:focus {
+    background-color: #2946FF;
+    color: #FFFFFF;
+    border-color: #2946FF;
+}
+
+/* Keyboard accessibility */
+
+.discover-artists-page .artist-filter:focus-visible {
+    outline: 2px solid #191919;
+    outline-offset: 3px;
+}
+
+/* Dropdown options */
+
+.discover-artists-page .artist-filter option {
+    background-color: #FFFFFF;
+    color: #191919;
 }
